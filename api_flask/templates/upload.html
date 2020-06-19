@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<title>Upload Image or Video</title>
+<center>
+{% block body %}
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+	    {% for message in messages %}
+		  <div class="alert alert-warning alert-dismissible" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			
+		  </div>
+		{% endfor %}
+	  {% endif %}
+	{% endwith %}
+
+
+{% if msg %}
+	<p class=message><strong>Message:</strong> {{ msg }}
+{% endif %}
+  <h1>Overview</h1>
+	<h1>UPLOAD A FILE</h1>
+	<form method = 'POST' enctype="multipart/form-data">
+		<input type="file" name="file">
+		<input type="submit" name="submit" value="UPLOAD">	
+	</form>
+
+{% endblock %}
+</center>

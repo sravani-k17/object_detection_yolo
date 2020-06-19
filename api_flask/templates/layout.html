@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+
+<title>My Application</title>
+<center>
+{% if error %}
+    <p class=error><strong>MESSAGE:</strong> {{ error }}
+{% endif %}	
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}
+<h2>welcome</h2>
+
+{% endblock %}
+</center>
